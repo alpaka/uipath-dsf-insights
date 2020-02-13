@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>261.777777777778,525.777777777778</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>261.777777777778,463.555555555556</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AddInsightsUser_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -60,7 +60,7 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AddInsightsUser" sap:VirtualizedContainerService.HintSize="241.777777777778,425.777777777778" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AddInsightsUser" sap:VirtualizedContainerService.HintSize="241.777777777778,363.555555555556" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ss:SecureString" Name="adminPW" />
       <Variable x:TypeArguments="x:String" Name="adminUser" />
@@ -81,6 +81,5 @@
     <do:Login AdminPassword="[new System.Net.NetworkCredential(String.Empty, adminPW).Password]" AdminUsername="[adminUser]" BearerToken="[token]" sap:VirtualizedContainerService.HintSize="200,22.2222222222222" sap2010:WorkflowViewState.IdRef="Login_1" OrchestratorURL="[orchURLGen.ToString]" Tenant="Default" />
     <do:AddUser BearerToken="[token]" Email="[Email]" sap:VirtualizedContainerService.HintSize="200,22.2222222222222" sap2010:WorkflowViewState.IdRef="AddUser_1" OrchestratorURL="[orchURLGen.ToString]" Password="[Password]" Roles="[{&quot;Insights Demo&quot;}]" Tenant="Default" Username="[Username]" />
     <ui:SetCredential TimeoutMS="{x:Null}" CredentialName="Insights_OrchCredential" DisplayName="Set Credential Insights login" sap:VirtualizedContainerService.HintSize="200,22.2222222222222" sap2010:WorkflowViewState.IdRef="SetCredential_1" Password="[Password]" UserName="[username]" />
-    <ui:SetCredential TimeoutMS="{x:Null}" CredentialName="Insights_OrchAdmin" DisplayName="Set Credential admin login" sap:VirtualizedContainerService.HintSize="200,22.2222222222222" sap2010:WorkflowViewState.IdRef="SetCredential_2" Password="deleted" UserName="deleted" />
   </Sequence>
 </Activity>

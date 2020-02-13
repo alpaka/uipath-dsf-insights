@@ -1,11 +1,11 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="DSF_Arm" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:d="clr-namespace:DSF;assembly=DSF" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="config" Type="InArgument(njl:JObject)" />
+    <x:Property Name="config" Type="InOutArgument(njl:JObject)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>437.333333333333,774.222222222222</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>437.333333333333,999.111111111111</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DSF_Arm_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -58,7 +58,7 @@
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DSF_Arm" sap:VirtualizedContainerService.HintSize="417.333333333333,714.222222222222" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DSF_Arm" sap:VirtualizedContainerService.HintSize="417.333333333333,939.111111111111" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="shouldArm" />
       <Variable x:TypeArguments="ui:GenericValue" Name="username" />
@@ -101,5 +101,15 @@
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
+    <Assign sap:VirtualizedContainerService.HintSize="375.555555555556,60.4444444444444" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign.To>
+        <OutArgument x:TypeArguments="njl:JToken">[config("Insights_Initialized")]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="njl:JToken">[True]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <d:SaveLocalConfig Config="[config]" ConfigPath="C:\UiPath\config\dsf.json" sap:VirtualizedContainerService.HintSize="375.555555555556,22.2222222222222" sap2010:WorkflowViewState.IdRef="SaveLocalConfig_3" />
+    <ui:SetCredential TimeoutMS="{x:Null}" CredentialName="Insights_OrchAdmin" DisplayName="Set Credential admin login" sap:VirtualizedContainerService.HintSize="375.555555555556,22.2222222222222" sap2010:WorkflowViewState.IdRef="SetCredential_2" Password="deleted" UserName="deleted" />
   </Sequence>
 </Activity>
