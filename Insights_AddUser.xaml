@@ -2,6 +2,7 @@
   <x:Members>
     <x:Property Name="Username" Type="InArgument(x:String)" />
     <x:Property Name="Password" Type="InArgument(x:String)" />
+    <x:Property Name="Email" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -55,6 +56,8 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>InsightsOrchAPI</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="AddInsightsUser" sap:VirtualizedContainerService.HintSize="241.777777777778,301.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -76,6 +79,6 @@
     </ui:GetRobotAsset>
     <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Insights_OrchAdmin" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="200,22.2222222222222" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[adminPW]" Username="[adminUser]" />
     <do:Login AdminPassword="[new System.Net.NetworkCredential(String.Empty, adminPW).Password]" AdminUsername="[adminUser]" BearerToken="[token]" sap:VirtualizedContainerService.HintSize="200,22.2222222222222" sap2010:WorkflowViewState.IdRef="Login_1" OrchestratorURL="[orchURLGen.ToString]" Tenant="Default" />
-    <do:AddUser BearerToken="{x:Null}" Password="{x:Null}" Username="{x:Null}" sap:VirtualizedContainerService.HintSize="200,22.2222222222222" sap2010:WorkflowViewState.IdRef="AddUser_1" OrchestratorURL="https://orchestrator.southcentralus.cloudapp.azure.com/" Roles="[{&quot;Administrator&quot;}]" Tenant="Default" />
+    <do:AddUser BearerToken="[token]" Email="[Email]" sap:VirtualizedContainerService.HintSize="200,22.2222222222222" sap2010:WorkflowViewState.IdRef="AddUser_1" OrchestratorURL="[orchURLGen.ToString]" Password="[Password]" Roles="[{&quot;Insights Demo&quot;}]" Tenant="Default" Username="[Username]" />
   </Sequence>
 </Activity>

@@ -3,7 +3,7 @@
   "description": "Insights demo",
   "main": "Main.xaml",
   "dependencies": {
-    "DSF": "[1.0.7-alpha.7]",
+    "DSF": "[1.0.7-alpha.10]",
     "UiPath.Excel.Activities": "[2.8.0-preview]",
     "UiPath.Mail.Activities": "[1.8.0-preview]",
     "UiPath.System.Activities": "[19.12.0-preview]",
@@ -12,7 +12,7 @@
   "webServices": [],
   "schemaVersion": "4.0",
   "studioVersion": "19.12.0.61",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.1-alpha",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -32,6 +32,17 @@
       "privateWorkflows": []
     },
     "fileInfos": []
+  },
+  "arguments": {
+    "input": [
+      {
+        "name": "Mode",
+        "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "required": false,
+        "hasDefault": false
+      }
+    ],
+    "output": []
   },
   "expressionLanguage": "VisualBasic"
 }

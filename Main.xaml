@@ -5,10 +5,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>766.666666666667,762.222222222222</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>766.666666666667,722.222222222222</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="48">
+    <scg:List x:TypeArguments="x:String" Capacity="25">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -81,9 +81,9 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">262.888888888889,126.444444444444</av:Point>
           <av:Size x:Key="ShapeSize">74.2222222222222,87.1111111111111</av:Size>
-          <av:PointCollection x:Key="Default">300,213.555555555556 300,270.706666666667 340,270.706666666667</av:PointCollection>
+          <av:PointCollection x:Key="Default">300,213.555555555555 300,260 340,260</av:PointCollection>
           <av:PointCollection x:Key="disarmConnector">262.888888888889,170 120,170 120,235.333333333333</av:PointCollection>
-          <av:PointCollection x:Key="armConnector">337.111111111111,170 440,170 440,236.04</av:PointCollection>
+          <av:PointCollection x:Key="armConnector">337.111111111111,170 440,170 440,225.333333333333</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowStep x:Key="disarm" x:Name="__ReferenceID2">
@@ -114,12 +114,12 @@
       <FlowStep x:Key="arm" x:Name="__ReferenceID0">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">340,236.04</av:Point>
+            <av:Point x:Key="ShapeLocation">340,225.333333333333</av:Point>
             <av:Size x:Key="ShapeSize">200,69.3333333333333</av:Size>
-            <av:PointCollection x:Key="ConnectorLocation">440,305.373333333333 440,346.444444444444</av:PointCollection>
+            <av:PointCollection x:Key="ConnectorLocation">440,294.666666666667 440,346.444444444444</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="Arm if necessary" sap:VirtualizedContainerService.HintSize="525.333333333333,466.222222222222" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Arm if necessary" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="ShouldArm" />
           </Sequence.Variables>
@@ -128,8 +128,8 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <d:LoadLocalConfig Config="[config]" ConfigPath="C:\UiPath\config\dsf.json" sap:VirtualizedContainerService.HintSize="483.555555555556,22.2222222222222" sap2010:WorkflowViewState.IdRef="LoadLocalConfig_1" />
-          <Assign sap:VirtualizedContainerService.HintSize="483.555555555556,60.4444444444444" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <d:LoadLocalConfig Config="[config]" ConfigPath="C:\UiPath\config\dsf.json" sap:VirtualizedContainerService.HintSize="520,22.2222222222222" sap2010:WorkflowViewState.IdRef="LoadLocalConfig_1" />
+          <Assign sap:VirtualizedContainerService.HintSize="520,60.4444444444444" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[ShouldArm]</OutArgument>
             </Assign.To>
@@ -137,7 +137,31 @@
               <InArgument x:TypeArguments="x:Boolean">[not Config.ContainsKey("DSF_Insights_Initialized") OrElse Not Config("DSF_Insights_Initialized").Value(Of boolean)]</InArgument>
             </Assign.Value>
           </Assign>
-          <If Condition="[ShouldArm]" sap:VirtualizedContainerService.HintSize="483.555555555556,211.111111111111" sap2010:WorkflowViewState.IdRef="If_1" />
+          <If Condition="[ShouldArm]" sap:VirtualizedContainerService.HintSize="520,493.777777777778" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,342.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DSF_Arm workflow" sap:VirtualizedContainerService.HintSize="333.777777777778,87.5555555555556" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="DSF_Arm.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InOutArgument x:TypeArguments="njl:JObject" x:Key="config">[config]</InOutArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <Assign sap:VirtualizedContainerService.HintSize="333.777777777778,60.4444444444444" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="njl:JToken">[config("Insights_Initialized")]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="njl:JToken">[True]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <d:SaveLocalConfig Config="[config]" ConfigPath="C:\UiPath\config\dsf.json" sap:VirtualizedContainerService.HintSize="333.777777777778,22.2222222222222" sap2010:WorkflowViewState.IdRef="SaveLocalConfig_1" />
+              </Sequence>
+            </If.Then>
+          </If>
         </Sequence>
         <FlowStep.Next>
           <FlowDecision x:Name="__ReferenceID3" Condition="[Mode &lt;&gt; &quot;arm&quot;]" DisplayName="Run?" sap:VirtualizedContainerService.HintSize="70.2222222222222,87.1111111111111" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
@@ -160,12 +184,41 @@
                     <av:Size x:Key="ShapeSize">200,69.3333333333333</av:Size>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Run" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Run" sap:VirtualizedContainerService.HintSize="475.555555555556,466.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="ui:GenericValue" Name="orchURL" />
+                  </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Insights_OpenAndLogin workflow" sap:VirtualizedContainerService.HintSize="433.777777777778,87.5555555555556" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Insights_OpenAndLogin.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Insights_OrchURL" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="433.777777777778,22.2222222222222" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+                    <ui:GetRobotAsset.Value>
+                      <OutArgument x:TypeArguments="ui:GenericValue">[orchURL]</OutArgument>
+                    </ui:GetRobotAsset.Value>
+                  </ui:GetRobotAsset>
+                  <ui:OpenBrowser BrowserType="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="433.777777777778,184.444444444444" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[new Uri(new Uri(orchURL), &quot;/insights&quot;).ToString]">
+                    <ui:OpenBrowser.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,84.8888888888889" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:OpenBrowser.Body>
+                  </ui:OpenBrowser>
                 </Sequence>
               </FlowStep>
             </FlowDecision.True>
