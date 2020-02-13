@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>437.333333333333,836.444444444444</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>437.333333333333,774.222222222222</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DSF_Arm_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -58,7 +58,7 @@
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DSF_Arm" sap:VirtualizedContainerService.HintSize="417.333333333333,776.444444444444" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DSF_Arm" sap:VirtualizedContainerService.HintSize="417.333333333333,714.222222222222" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="shouldArm" />
       <Variable x:TypeArguments="ui:GenericValue" Name="username" />
@@ -70,7 +70,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Add User" sap:VirtualizedContainerService.HintSize="375.555555555556,428.888888888889" sap2010:WorkflowViewState.IdRef="Sequence_14">
+    <Sequence DisplayName="Add User" sap:VirtualizedContainerService.HintSize="375.555555555556,366.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_14">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -90,7 +90,6 @@
           <InArgument x:TypeArguments="x:String" x:Key="Email">[email]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:SetCredential TimeoutMS="{x:Null}" CredentialName="Insights_OrchCredential" DisplayName="Set Credential Insights login" sap:VirtualizedContainerService.HintSize="333.777777777778,22.2222222222222" sap2010:WorkflowViewState.IdRef="SetCredential_1" Password="[pw]" UserName="[username]" />
     </Sequence>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Insights_OpenAndLogin workflow" sap:VirtualizedContainerService.HintSize="375.555555555556,87.5555555555556" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Insights_OpenAndLogin.xaml">
       <ui:InvokeWorkflowFile.Arguments>
