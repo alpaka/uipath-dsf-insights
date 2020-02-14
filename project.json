@@ -3,7 +3,7 @@
   "description": "Insights demo",
   "main": "Main.xaml",
   "dependencies": {
-    "DSF": "[1.0.7-alpha.12]",
+    "DSF": "[1.0.7-alpha.14]",
     "UiPath.Excel.Activities": "[2.8.0-preview]",
     "UiPath.Mail.Activities": "[1.8.0-preview]",
     "UiPath.System.Activities": "[19.12.0-preview]",
@@ -12,7 +12,7 @@
   "webServices": [],
   "schemaVersion": "4.0",
   "studioVersion": "19.12.0.61",
-  "projectVersion": "1.0.1-alpha.4",
+  "projectVersion": "1.0.1-alpha.7",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
