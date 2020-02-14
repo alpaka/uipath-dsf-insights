@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>437.333333333333,836.444444444444</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>437.333333333333,971.111111111111</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DSF_Arm_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -58,7 +58,7 @@
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DSF_Arm" sap:VirtualizedContainerService.HintSize="417.333333333333,776.444444444444" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DSF_Arm" sap:VirtualizedContainerService.HintSize="417.333333333333,911.111111111111" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="shouldArm" />
       <Variable x:TypeArguments="ui:GenericValue" Name="username" />
@@ -70,6 +70,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="375.555555555556,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Arming Insights demo&quot;]" />
     <Sequence DisplayName="Add User" sap:VirtualizedContainerService.HintSize="375.555555555556,366.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_14">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
