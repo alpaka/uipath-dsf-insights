@@ -1,7 +1,7 @@
 {
   "UiPath.UiAutomation.Activities.Generic.DelayBeforeMS": "0",
   "UiPath.UiAutomation.Activities.Generic.DelayAfterMS": "0",
-  "UiPath.UiAutomation.Activities.Generic.TimeoutMS": "6000",
+  "UiPath.UiAutomation.Activities.Generic.TimeoutMS": "30000",
   "UiPath.UiAutomation.Activities.Generic.WaitForReady": "INTERACTIVE",
   "UiPath.UiAutomation.Activities.Browser.BrowserType": "Chrome",
   "UiPath.UiAutomation.Activities.Browser.Private": "False",
@@ -19,5 +19,6 @@
   "UiPath.UiAutomation.Activities.MouseEvents.SendWindowMessages": "False",
   "UiPath.UiAutomation.Activities.MouseEvents.SimulateClick": "True",
   "UiPath.UiAutomation.Activities.MouseEvents.SimulateHover": "True",
-  "UiPath.UiAutomation.Activities.Screenshot.WaitBefore": "300"
+  "UiPath.UiAutomation.Activities.Screenshot.WaitBefore": "300",
+  "UiPath.UiAutomation.Activities.Generic.AlterIfDisabled": "False"
 }

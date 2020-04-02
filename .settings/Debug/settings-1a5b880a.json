@@ -19,5 +19,6 @@
   "UiPath.UiAutomation.Activities.MouseEvents.SendWindowMessages": "False",
   "UiPath.UiAutomation.Activities.MouseEvents.SimulateClick": "True",
   "UiPath.UiAutomation.Activities.MouseEvents.SimulateHover": "True",
-  "UiPath.UiAutomation.Activities.Screenshot.WaitBefore": "300"
+  "UiPath.UiAutomation.Activities.Screenshot.WaitBefore": "300",
+  "UiPath.UiAutomation.Activities.Generic.AlterIfDisabled": "False"
 }
